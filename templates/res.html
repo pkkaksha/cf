@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+{%for key in result%}
+<h2>{{key}}</h2>
+<table class="table table-bordered" >
+	{%for el in result[key]%}
+	<tr>
+		{%for j in el%}
+			<td>
+				{{j}}
+			</td>
+			
+
+		{%endfor%}
+		<td>
+				<img src="../static/images/{{el[0]}}.jpeg" style="width:128px;height:128px;">
+			</td>
+
+	</tr>
+	{%endfor%}
+
+</table>
+{%endfor%}
+
+</body>
+</html>
