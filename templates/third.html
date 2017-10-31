@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Movie Recommender System</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+  </head>
+ 
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="http://localhost:5000/">Home</a></li>
+            <li role="presentation"><a href="#">Sign In</a></li>
+            <li role="presentation" class="active"><a href="#">Sign Up</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Movie Recommender System</h3>
+      </div>
+ 
+      <div class="jumbotron">
+        <h3>Movie Recommender System</h3>
+        <form class="form-signin" action = "http://localhost:5000/viewmyrecommendations" method = "POST">
+		<p><input type = "submit" value = "submit" /></p>
+		 
+		<table border = 1>
+		<tr>
+		<td><label for="userid">User id</label></td><td><input type="int" name="userid" id="userid" class="form-control" placeholder="User id" required autofocus></td>
+		</tr>
+         {% for key in result1 %}
+         
+            <tr>
+               <td> <label name="{{key}}" >{{ result1[key] }}</label> </td>
+			   <td>
+			 
+				<select class="form-control" name="{{key}}">       
+					<option value="NA">NA</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				
+			   </td>
+			</tr>
+         {% endfor %}
+		 
+      </table>
+      <!--  <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+         
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button> -->
+      </form>
+      </div>
+ 
+       
+ 
+      <footer class="footer">
+        <p>&copy; IIIT Hyderabad 2016</p>
+      </footer>
+ 
+    </div>
+  </body>
+</html>
+
